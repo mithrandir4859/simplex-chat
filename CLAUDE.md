@@ -52,6 +52,15 @@ local checkout of `simplexmq` at the pinned commit. Start with the first two.
   delayed delivery + urgency override, and why this isn't obsoleted by mixing at low traffic.
   Includes the code-confirmed QUOTA ceiling on delay. *Why: explore what only a server change
   can buy, and where it still can't reach.*
+- **[leodocs/forked-server-timing-v2.md](leodocs/forked-server-timing-v2.md)** — Second
+  version, re-grounded against the pinned `simplexmq` (`b981dcb7`) and the full RFC/blog
+  corpus. Key reframing: SimpleX **already names this primitive ("noise traffic")** in its
+  whitepaper/threat model but never built it, and has a detailed-design delay type
+  (`MessageSchedule`) in the super-peer layer. Adds the **21-day message-TTL ceiling**
+  (alongside QUOTA), the **delivery-receipt** and **member-send-limit `wait`-throttle**
+  breaks, the **commercial-model "zero-knowledge operator" contradiction**, and
+  service-session/rotation/short-link/SKEY mechanics v1 missed. *Why: a planning-ready,
+  source-verified rewrite with the contradictions and hooks made explicit.*
 
 ## Notes
 - `simplexmq` is cloned as a **sibling** dir (`../simplexmq`) for verification, per the
